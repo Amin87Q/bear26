@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamster Combat</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body onload="loadProfile()">
+    <div class="container">
+        <div class="header">
+            <img id="profilePic" src="https://via.placeholder.com/50" alt="User">
+            <div>
+                <h2 id="userName">(User Name)</h2>
+                <p>html-hero</p>
+            </div>
+        </div>
+        <br>
+        <div class="info">
+            <div>
+                <p>Earn per tap</p>
+                <p><img src="2.png" alt="Hamster"> +1</p>
+            </div>
+            <div>
+                <p>Coins to level up</p>
+                <p>1M</p>
+            </div>
+            <div>
+                <p>Profit per hour</p>
+                <p><img src="2.png" alt="Hamster"> +0</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="score" id="score">
+            <img src="coin.png" alt="Coin" class="coin-icon"> 0
+        </div>
+        <br><br>
+        <div class="hamster" onclick="addCoins()">
+            <img id="clickableHamster" src="male-hamster.png" alt="Hamster">
+        </div>
+        <br><br><br><br>
+        <div class="level">
+            <p>Level <span id="currentLevel">1</span>/10</p>
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+        </div>
+        <br>
+        <!-- بخش جدید با گزینه‌های مختلف -->
+        <div class="options">
+            <button onclick="showSection('miningBear')">Mining Bear</button>
+            <button onclick="showSection('bearShop')">Bear Shop</button>
+            <button onclick="showSection('upgrade')">Upgrade</button>
+        </div>
+        <br>
+        <!-- محتوای بخش‌ها -->
+        <div id="miningBear" class="section" style="display: none;">
+            <h3>Mining Bear</h3>
+            <p>Status: Idle</p>
+            <button onclick="startMining()">Start Mining</button>
+            <button onclick="stopMining()">Stop Mining</button>
+            <p>Mining Rate: 10 coins/hour</p>
+        </div>
+        <div id="bearShop" class="section" style="display: none;">
+            <h3>Bear Shop</h3>
+            <p>Shop Items:</p>
+            <ul>
+                <li>Upgrade Hamster: <button onclick="buyUpgrade('hamster')">Buy - 5000 Coins</button></li>
+                <li>Speed Boost: <button onclick="buyUpgrade('speed')">Buy - 10000 Coins</button></li>
+            </ul>
+        </div>
+        <div id="upgrade" class="section" style="display: none;">
+            <h3>Upgrade</h3>
+            <p>Available Upgrades:</p>
+            <ul>
+                <li>Upgrade Production: <button onclick="upgradeProduction()">Upgrade - 20000 Coins</button></li>
+                <li>Increase Click Rate: <button onclick="upgradeClickRate()">Upgrade - 15000 Coins</button></li>
+            </ul>
+        </div>
+    </div>
+    <script src="script1.js"></script>
+</body>
+
+</html>

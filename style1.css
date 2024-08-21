@@ -1,0 +1,250 @@
+/* استایل کلی بدنه صفحه */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* تنظیم کلی برای جعبه‌بندی عناصر */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* استایل تصویر همستر */
+.hamster {
+  width: 400px; /* اندازه تصویر همستر */
+  height: 400px; /* اندازه تصویر همستر */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  cursor: pointer;
+  overflow: hidden; /* پنهان کردن هر چیزی که از اندازه تصویر بیرون زده است */
+}
+
+.hamster img {
+  width: 100%; /* اندازه تصویر به اندازه دایره */
+  height: 100%; /* اندازه تصویر به اندازه دایره */
+  object-fit: cover; /* حفظ نسبت ابعاد و پر کردن دایره */
+  transition: transform 0.1s; /* تغییر اندازه تصویر با انیمیشن سریع */
+}
+
+/* انیمیشن هنگام کلیک روی همستر */
+.hamster:active img {
+  transform: scale(0.75); /* کوچک‌تر شدن تصویر هنگام کلیک */
+}
+
+/* استایل سایر عناصر */
+.container {
+  width: 90%;
+  max-width: 400px;
+  background: #333;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.header div {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.header div h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.header div p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #ff9900;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.info div {
+  background: #444;
+  border-radius: 5px;
+  padding: 10px;
+  width: 30%;
+  box-sizing: border-box;
+}
+
+.info div p {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info div p img {
+  width: 50px; /* بزرگ‌تر کردن تصویر سکه */
+  height: 50px; /* بزرگ‌تر کردن تصویر سکه */
+  margin-right: 10px; /* فاصله بیشتر از تعداد سکه‌ها */
+}
+
+.info div p:first-child {
+  font-size: 1rem; /* افزایش اندازه فونت */
+  color: #ccc;
+}
+
+.info div p:last-child {
+  font-size: 1.25rem; /* افزایش اندازه فونت */
+  font-weight: bold; /* بولد کردن فونت */
+  color: #ff9900;
+}
+
+.score {
+  font-size: 2rem; /* بزرگ‌تر کردن اندازه فونت تعداد سکه‌ها */
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score img {
+  width: 50px; /* افزایش اندازه تصویر سکه */
+  height: 50px;
+  margin-right: 10px; /* فاصله بیشتر از تعداد سکه‌ها */
+  vertical-align: middle;
+}
+
+/* استایل نوار پیشرفت */
+.level {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.level p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.level .progress-bar {
+  width: 70%;
+  background: #555;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.level .progress-bar div {
+  background: #00cc00;
+  height: 100%;
+  width: 0;
+  position: absolute;
+  transition: width 0.3s;
+}
+
+/* استایل بخش‌های جدید */
+.options {
+  display: flex;
+  flex-direction: column; /* چینش عمودی برای بخش‌های جدید */
+  gap: 20px; /* فاصله بین بخش‌ها */
+  margin-top: 20px;
+}
+
+.section {
+  background: #444;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.section h3 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.section p {
+  color: #fff;
+}
+
+.section button {
+  background: #ff9900;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.section button:hover {
+  background: #cc7a00;
+}
+
+.section ul {
+  list-style-type: none;
+  padding: 0;
+  color: #fff;
+}
+
+.section li {
+  margin: 10px 0;
+}
+
+/* مدیا کوئری برای نمایش بهتر در دستگاه‌های کوچک‌تر */
+@media (max-width: 480px) {
+  .header img {
+    width: 40px;
+    height: 40px;
+  }
+  .header div h2 {
+    font-size: 0.875rem;
+  }
+  .header div p {
+    font-size: 0.625rem;
+  }
+  .info div {
+    width: 28%;
+  }
+  .score {
+    font-size: 1.25rem;
+  }
+  .score img {
+    width: 40px; /* اندازه تصویر سکه برای دستگاه‌های کوچک‌تر */
+    height: 40px;
+  }
+  .hamster {
+    width: 300px; /* اندازه تصویر همستر برای دستگاه‌های کوچک‌تر */
+    height: 300px; /* اندازه تصویر همستر برای دستگاه‌های کوچک‌تر */
+  }
+  .hamster img {
+    width: 100%; /* اندازه تصویر به اندازه دایره */
+    height: auto;
+  }
+  .level p {
+    font-size: 0.75rem;
+  }
+}
